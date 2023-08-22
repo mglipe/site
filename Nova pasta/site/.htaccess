@@ -1,0 +1,10 @@
+RewriteEngine on
+
+
+
+RewriteRule ^([a-z0-9-]+)$ 					index.php?pagina=$1 [NC]
+RewriteRule ^noticias/?([0-9]+)?$	 		index.php?pagina=noticias&noticia_id=$1 [NC]
+
+
+
+#RewriteRule ^/site/noticias/([a-z!]+)?$ 	index.php?pagina=noticias&item=$1 [NC]

@@ -1,0 +1,102 @@
+[
+	{	
+		"descricao" : "COMISSÃO DE LEGISÇÃO, JUSTIÇA E REDAÇÃO FINAL.",
+		"membros" : [
+			{
+				"nome":"IRANILDO FRANCISCO DE CARVALHO",
+				"cargo":"Presidente",
+				"foto":"IRANILDO-FRANCISCO-DE-CARVALHO.jpg"
+			}
+		]
+	},
+	{	
+		"descricao" : "VEREADORES – 15° LEGISLATURA 2021-2024",
+		"membros" : [
+			{
+				"nome":"ADEILDE ANÁLIA DE JESUS (HILDA)",
+				"cargo":"Vice-Presidente",
+				"foto":"ADEILDE-ANALIA-DE-JESUS.jpg"
+			}
+		]
+	},
+	{	
+		"descricao" : "VEREADORES – 15° LEGISLATURA 2021-2024",
+		"membros" : [
+			{
+				"nome":"ANTÔNIO FRANCISCO DE CARVALHO (ANTÔNIO CHIQUINHO)",
+				"cargo":"Primeiro Secretário",
+				"foto":"ANTONIO-FRANCISCO-DE-CARVALHO.jpg"
+			}
+		]
+	},
+	{	
+		"descricao" : "VEREADORES – 15° LEGISLATURA 2021-2024",
+		"membros" : [
+			{
+				"nome":"MANOEL FRANCISCO DE CARVALHO (NELI)",
+				"cargo":"Segundo Secretário",
+				"foto":"MANOEL-FRANCISCO-DE-CARVALHO.jpg"
+			}
+		]
+	},
+	{	
+		"descricao" : "VEREADORES – 15° LEGISLATURA 2021-2024",
+		"membros" : [
+			{
+				"nome":"ADÃO JOSÉ DA SILVA (IRMÃO ADÃO)",
+				"cargo":"Vereador",
+				"foto":"ADAO-JOSE-DA-SILVA.jpg"
+			}
+		]
+	},
+	{	
+		"descricao" : "VEREADORES – 15° LEGISLATURA 2021-2024",
+		"membros" : [
+			{
+				"nome":"RONALD MARTAN MACÊDO LEAL (RONIM)",
+				"cargo":"Vereador",
+				"foto":"RONALD-MARTAN-MACEDO-LEAL.jpg"
+			}
+		]
+	},
+	{	
+		"descricao" : "VEREADORES – 15° LEGISLATURA 2021-2024",
+		"membros" : [
+			{
+				"nome":"HELTON JOÃO DE CARVALHO (IRMÃO HELTON)",
+				"cargo":"Vereador",
+				"foto":"HELTON-JOAO-DE-CARVALHO.jpg"
+			}
+		]
+	},
+	{	
+		"descricao" : "VEREADORES – 15° LEGISLATURA 2021-2024",
+		"membros" : [
+			{
+				"nome":"JOSÉ BONIFÁCIO DA SILVA DIAS",
+				"cargo":"Vereador",
+				"foto":"JOSE-BONIFACIO-DA-SILVA-DIAS.jpg"
+			}
+		]
+	},
+	{	
+		"descricao" : "VEREADORES – 15° LEGISLATURA 2021-2024",
+		"membros" : [
+			{
+				"nome":"JEYDSON MATOS DE MACÊDO (GG MACEDO)",
+				"cargo":"Vereador",
+				"foto":"JEYDSON-MATOS-DE-MACEDO.jpg"
+			}
+		]
+	},
+	{	
+		"descricao" : "VEREADORES – 15° LEGISLATURA 2021-2024",
+		"membros" : [
+			{
+				"nome":"EMANOELA CONRADO SOUSA LIMA (MANINHA)",
+				"cargo":"Vereador",
+				"foto":"EMANOELA-CONRADO-SOUSA-LIMA.jpg"
+			}
+		]
+	}
+]

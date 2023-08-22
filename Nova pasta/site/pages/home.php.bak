@@ -1,0 +1,322 @@
+	<div class="home-noticias">
+		<div class="noticia-destaque">
+			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner">
+				
+				<?
+				$_db = new DBController;
+				
+				$_imagens_carousel = $_db;
+				$_imagens_carousel->sql = "select * from site 
+					where status = 1 and modulo = 'noticia-destaque' 
+					order by data_cadastro desc";
+				$_imagens_carousel = $_imagens_carousel -> select();
+				
+				foreach($_imagens_carousel as $_noticia){
+					?>
+					<div class="carousel-item text-center">
+						<img  src="<?= $_noticia[imagem_capa] ?>" alt="First slide">
+						<div class="carousel-caption d-md-block bg-dark">
+							<a href="/noticias/<?= $_noticia[hash] ?>">
+								<h6 class="text-white"><?= $_noticia[titulo] ?></h6>
+							</a>
+						</div> 
+					</div>
+				<?
+				}
+				?>
+				</div>
+				
+				<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				
+				<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+			
+			<script>
+				$(".carousel-item:first-child").addClass("active");
+			</script>
+				
+		</div>
+			
+		<div class="menu-lateral">
+			<ul>
+				<? 
+				$_db = new DBController;
+					$_menu_lateral = $_db;
+					$_menu_lateral->sql = "select * from site where modulo = 'menu-laretal'";
+					$_menu_lateral = $_menu_lateral -> select();
+					
+					// var_dump($_db);
+					
+					foreach($_menu_lateral as $_item){
+						// fa fa-gavel
+						?>
+						<li>
+							<a href="<?= $_item[url] ?>" target="_blank">
+								<i class="<?= $_item[icon] ?>"></i> <?= $_item[titulo] ?>
+							</a>
+						</li>
+						<?
+					}
+				?>
+				
+			</ul>
+		</div>
+			
+	</div>
+
+	<section class="section-destaques" id="destaques">
+		<h1 class="h1-titulo-sessao" data-icon="fa fa-newspaper-o">Notícias em destaque</h1>
+
+		<div class="card-deck">
+			<? 
+				$_noticias_destaque = $_db;
+				$_noticias_destaque->sql = "select * from site 
+					where status = 1 and modulo = 'noticia-destaque' 
+					order by data_cadastro desc
+					limit 3";
+				$_noticias_destaque = $_noticias_destaque -> select();
+				
+				foreach($_noticias_destaque as $_noticia){
+					?>
+					<div class="card">
+						<img src="<?= $_noticia[imagem_capa] ?>">
+						<div class="card-body">
+							<a href="/noticias/<?= $_noticia[hash] ?>">
+								<h6><?= $_noticia[titulo] ?></h6>
+							</a>
+						</div>
+					</div>
+				<?
+				}
+				?>
+		
+		</div>
+	</section>
+	<!--
+	<section class="section-destaques">
+		<h1 class="h1-titulo-sessao" data-icon="fa fa-link">Links</h1>
+
+		<div class="card-deck">
+
+			
+			
+			<? 
+				$_links = $_db;
+				
+				$_links->sql = "select * from site 
+					where modulo = 'menu-links'
+						and status = 1 limit 3";
+				$_links = $_links -> select();
+				// var_dump($_links);
+				foreach($_links as $links){
+					?>
+					<div class="card">
+						<img class="card-img-top" style="width: 315px; height: 200px;" src="<?= $links[imagem_capa] ?>">
+						<div class="card-body">
+							<a href="<?= $links[url] ?>" target="_blank">
+								<button class="button">Acessar</button>
+							</a>
+						</div>
+					</div>
+					
+				<?
+				}
+				?>
+		</div>
+	</section>
+	-->
+	
+	<!--	
+	<section class="section-destaques">
+		<h1 class="h1-titulo-sessao" data-icon="fa fa-calendar">Banners Eventos</h1>
+
+		<div class="card-deck">
+		
+			<? 
+				$_banners_eventos = $_db;
+				
+				$_banners_eventos->sql = "select * from site 
+					where modulo = 'banners-eventos'
+						and status = 1 order by data_cadastro desc limit 3";
+				$_banners_eventos = $_banners_eventos -> select();
+				// var_dump($_links);
+				foreach($_banners_eventos as $banners_eventos){
+					?>
+					<div class="card">
+						<img class="card-img-top" style="width: 315px; height: 260px;" src="<?= $banners_eventos[imagem_capa] ?>">
+					</div>
+					
+				<?
+				}
+				?>
+
+		</div>
+	</section>
+	<section class="section-destaques section-boletim">
+		<h1 class="h1-titulo-sessao" data-icon="fa fa-star">COVID-19 - Boletins</h1>
+		
+		<div class="card-deck">
+		
+			<? 
+			$_boletins_covid = $_db;
+			
+			$_boletins_covid->sql = "select * from site 
+				where modulo = 'covid-boletim'
+					and status = 1 limit 3";
+			$_boletins_covid = $_boletins_covid -> select();
+			// var_dump($_links);
+			foreach($_boletins_covid as $boletins_covid){
+				?>
+				<div class="card">
+					<img class="card-img-top" style="width: 315px; height: 250px;" src="<?= $boletins_covid[imagem_capa] ?>">
+					<div class="card-body">
+						<a href="<?= $boletins_covid[url] ?>">
+							<button class="button">Acessar</button>
+						</a>
+					</div>
+				</div>
+				
+			<?
+			}
+			?>
+			
+		</div>
+		
+	</section>
+	-->
+	
+	<h1 class="h1-titulo-sessao" data-icon="fa fa-camera-retro" id="fotos">
+		Fotos
+		<a href="fotos">
+			<button style="background:var(--cor-primaria); color: white;" type="button" class="btn btn-light">
+				<b>
+					Album
+				</b>
+			</button>
+		</a>
+	</h1>
+	<section class="section-mideas">
+
+		<div class="col-fotos">
+			<? 
+			$_fotos = $_db;
+			
+			$_fotos->sql = "select * from site 
+				where modulo = 'fotos'
+					and status = 1 order by data_cadastro desc limit 2";
+					
+			$_fotos = $_fotos -> select();
+			
+			foreach($_fotos as $fotos){
+			?>
+			<figure class="img-album">
+			  <figcaption><b><?= $fotos[titulo] ?></b></figcaption>
+			  <p><img src="<?= $fotos[imagem_capa] ?>"
+				alt="St. Tropez">
+			</figure>
+			<?
+			}
+			?>
+		</div>
+		
+			
+	</section>
+	<!-- <style>
+		figure {
+		  text-align: center;
+		  font-style: italic;
+		  font-size: smaller;
+		  text-indent: 0;
+		  border: thin silver solid;
+		  margin: 0.5em;
+		  padding: 0.3em;
+		  padding-bottom: 0.5em;
+		  width: 473px;
+		  height: 380px;
+		  display: table-cell;
+		}
+	</style> -->
+	
+	<h1 class="h1-titulo-sessao" data-icon="fa fa-video-camera">Vídeos</h1>
+	<section class="section-mideas" id="videos">
+		<div class="col-fotos">
+			
+			<? 
+			$_videos = $_db;
+			
+			$_videos->sql = "select * from site 
+				where modulo = 'videos'
+					and status = 1 limit 2";
+					
+			$_videos = $_videos -> select();
+			
+			foreach($_videos as $videos){
+			?>
+				<img src="<?= $videos[videos] ?>" alt="..." class="img-thumbnail">
+			<?
+			}
+			?>
+		</div>
+	</section>
+
+	<section class="section-noticias-gerais" id="noticias">
+		<h1 class="h1-titulo-sessao" data-icon="fa fa-newspaper-o">Notícias</h1>
+		<ul>
+			<? 
+				$_noticias = $_db;
+				$_noticias->sql = "select * from site where status = 1 and modulo like 'noticia%' order by data_cadastro desc";
+				$_noticias = $_noticias -> select();
+				
+				$data1 = date('Y-m-d', strtotime('-30 days'));
+				$data1 = strtotime($data1);
+				
+				
+				foreach($_noticias as $_noticia){
+					$data_br = DimonController :: data($_noticia[data_cadastro]);
+					$data2 = strtotime($_noticia[data_cadastro]);
+					
+					// if($data2 >= $data1){
+					// }	
+					echo"
+					<li data-hoje='{$data1}' data-noticia='{$data2}'>
+						<a href='/noticias/{$_noticia[hash]}'>$data_br - {$_noticia[titulo]} </a>
+					</li>";
+				
+					
+				}
+			?>
+		
+			<span id="mostrar_todas_noticias" class="badge badge-info" style="background:#2e377b;cursor: pointer;">Mostrar todas</span>
+			
+		</ul>
+		<script>
+			$( "li" ).each(function(){
+			  data1 = $(this).attr('data-hoje');
+			  data2 = $(this).attr('data-noticia');
+			  if(data2 <= data1){
+				  $(this).hide();
+			  }
+			});
+			$( "#mostrar_todas_noticias" ).click(function(){
+				$( "li" ).each(function(){
+				  data1 = $(this).attr('data-hoje');
+				  data2 = $(this).attr('data-noticia');
+				  if(data2 <= data1){
+					  $(this).toggle();
+					  // $('#mostrar_todas_noticias').html("Ocultar").addClass("teste");
+				  }
+				});
+			});
+			
+			
+			
+		</script>
+	</section>	
+
