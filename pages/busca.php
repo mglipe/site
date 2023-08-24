@@ -1,54 +1,53 @@
 <div class="home-noticias">
 <?php
-	if($_POST[termo] != ""){
-		
-	
-	$_noticia = new DBController;
-	
-		
+
+	if(@$_POST["termo"] != ""){
+		include_once("controller/ReceiveDataController.php");
+		$_noticias = new ReceiveDataController;
 		
 	?>
+
 	<h1 class="h1-titulo-sessao">Resultado da pesquisa</h1>
 	<ul>
 		<?php
-			$_noticia->sql = "select *, date_format(data_cadastro, '%d/%m/%Y') data_br from site where texto LIKE '%{$_POST[termo]}%' and status = 1 order by id desc";
+			//$_noticia->sql = "select *, date_format(data_cadastro, '%d/%m/%Y') data_br from site where texto LIKE '%{$_POST["termo"]}%' and status = 1 order by id desc";
 	
 			// $_noticia->sql .= "";
-			$_array = $_noticia->select();
-			
+			$_array = $_noticias -> buscar($_POST["termo"]);
+
 			if(count($_array) == 0){
 				?>
 				
 				<h6>
-					<small> Sem resultado da pesquisa "<?= $_POST[termo] ?>"</small>
+					<small> Sem resultado da pesquisa "<?= $_POST["termo"] ?>"</small>
 				</h6>
 					
-			<?	
-			}else{
+			<?php
 				
-			
-			foreach($_array as $key => $value){
-			// var_dump($value);
-		?>
-		<li>
-			<a href="noticias/<?= $value["id"] ?>">
-				<h6>
-					<small><?= $value["data_br"] ?></small>
-					<?= $value["titulo"] ?>
-				</h6>
-			</a>
-		</li>
-		<?php
+			}else{
+				$encontrados = count($_array);
+				echo "<script>$('.h1-titulo-sessao').html('Resultado da pesquisa - encontrados: {$encontrados} resultados.')</script>";	
+				foreach($_array as $key => $value){
+				
+				?>
+					<li>
+						<a href="noticias/<?= $value["id"] ?>">
+							<h6>
+								<small><?= @$value["data_br"] ?></small>
+								<?= @$value["titulo"] ?>
+							</h6>
+						</a>
+					</li>
+					<?php
+				}
 			}
-		}
 		?>
 	</ul>
-	<?
+	
+	<?php
 	}
 	else{
-		echo"
-			<h1 class='h1-titulo-sessao'>Sem resposta.</h1>
-		";
+		echo "<h1 class='h1-titulo-sessao'>Sem resposta.</h1>";
 	}
 	?>
 </div>

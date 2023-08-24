@@ -4,16 +4,21 @@
 	<ul>
         <?php
 
-            $conn = new PDO('mysql:host=localhost;dbname=site', 'root', '');
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            $sql = $conn->prepare("SELECT titulo, modulo, date_format(data_cadastro, '%d/%m/%y') data_br, hash FROM site WHERE modulo='noticia-destaque' and status = 1");
-            $sql->execute();
-
-            $row = $sql->fetchAll(PDO::FETCH_ASSOC);
+            // $conn = new PDO('mysql:host=localhost;dbname=site', 'root', '');
+            // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-            foreach($row as $value){?>
+            // $sql = $_db->conn->prepare("SELECT titulo, modulo, date_format(data_cadastro, '%d/%m/%y') data_br, hash FROM site WHERE modulo='noticia-destaque' and status = 1");
+            // $sql->execute();
+
+            // $row = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+            //arrow together atribute
+            $_db->sql = "SELECT titulo, modulo, date_format(data_cadastro, '%d/%m/%y') data_br, hash FROM site WHERE modulo='noticia-destaque' and status = 1";
+            //arrow separate method
+            $_notice = $_db -> select();
+            
+            foreach($_notice as $value){?>
             <li data-hoje='' data-noticia=''>
                 <a href='/noticias/<?= $value["hash"]?>'> <?= @$data_br?> - <?= @$value["titulo"]?> </a>
             </li>

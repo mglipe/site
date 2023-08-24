@@ -1,10 +1,15 @@
+	<?php
+		// include_once("controller/ReceiveDataController.php");
+		// $_rd = new ReceiveDataController;
+		// var_dump($_rd);
+	?>
 	<div class="home-noticias">
 		<div class="noticia-destaque">
 			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner">
 				
 				<?php
-				
+		
 					//consulta no DB 
 					$conn = new PDO('mysql:host=localhost;dbname=site', 'root', '');
 					$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

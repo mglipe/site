@@ -1,0 +1,39 @@
+<?php 
+
+class DataBaseController{
+    public function __construct(){
+        $this->connection();
+    }
+
+    private function connection(){
+        $this->conn = new PDO("mysql:host=localhost;dbname=site", 'root', '');
+        $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        return $this->conn;
+    }
+
+
+    public function insert($bind_params){
+        $data = $this->conn->prepare($this->sql);
+        $data->execute($bind_params);
+
+        return $data;
+
+    }
+
+    public function select(){
+        $list = $this->conn->prepare($this->sql);
+        $list->execute();
+
+        $row = $list->fetchAll(PDO::FETCH_ASSOC);
+        return $row;
+    }
+
+
+
+
+
+}
+
+
+?>

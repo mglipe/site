@@ -1,4 +1,9 @@
-<?
+<?php
+
+    include_once("controller/DataBaseController.php");
+    //declaration of the object and array start with underline
+    $_db = new DataBaseController;
+   
 
 ?>
 
@@ -147,16 +152,23 @@
                 <?php
 				$page = @$_GET["pagina"]; 
 				// verificar se é pagina home ou não 
-
-                $endPoint = array("", "noticias", "cidade", "vereadores", "contato");
-                foreach ($endPoint as $now){
-                    if($page == $now){
-                        if($now == ""){
-                            $now = "home";
-                        }
-                        include("pages/{$now}.php");
-                    }
+                if($page){
+                    include("pages/{$page}.php");
+                }else{
+                    include("pages/home.php");
                 }
+
+                // $endPoint = array("", "noticias", "cidade", "vereadores", "contato");
+                // foreach ($endPoint as $now){
+                //     if($page == $now){
+                //         if($now == ""){
+                //             $now = "home";
+                //         }
+                //         include("pages/{$now}.php");
+                //     }
+                // }
+
+
                 ?>
             </div>
             
@@ -241,7 +253,7 @@
 		var cookie = false;
 		var cookieContent = $('.cookie-disclaimer');
 
-		//checkCookie();
+		checkCookie();
 
 		if (cookie === true) {
 		  cookieContent.hide();
