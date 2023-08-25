@@ -193,7 +193,7 @@
 				
 				foreach($row as $value){?>
 					<li data-hoje='' data-noticia=''>
-						<a href='/noticias/<?= $value["hash"]?>'> <?=@$data_br?> - <?= $value["titulo"]?></a>
+						<a href='/noticias/<?= $value["hash"]?>'> <?= $value["data_br"]?> - <?= $value["titulo"]?></a>
 					</li>
 				<?php } ?>
 					

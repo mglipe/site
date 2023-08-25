@@ -887,6 +887,60 @@ nav.navbar button {
     background-color: var(--cor-secundaria);
 }
 
+/* info cookies */
+
+.lgdp{
+  display: flex;
+  position: fixed;
+  align-items: center;
+  width: 80%;
+  bottom: 50px;
+  padding: 15px;
+  background: #fff;
+  box-shadow: 1px 3px 10px rgb(0 0 0 / 54%);
+  border-radius: 10px;
+  
+
+}
+
+.info-text{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 65%;
+
+  font-size: 12px;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+  
+}
+
+.btn-cookies{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35%; 
+
+}
+
+
+.term-cookies{
+    margin-right: 20px;
+}
+
+
+/* page LGPD */
+
+.container-privacy-policy p{
+  line-height: 2.1;
+}
+
+.title-terms{
+  color: #007bff;
+
+}
+
 
 @media (max-width: 912px) {
   body {
@@ -930,6 +984,10 @@ nav.navbar button {
   .section-destaques {
     margin-bottom: 10px;
   }
+
+  .lgdp{
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -950,6 +1008,44 @@ nav.navbar button {
   .include-pages {
     min-height: 750px;
   }
+
+  .lgdp{
+    display: block;
+    position: fixed;
+    align-items: center;
+    width: 100%;
+    bottom: 50px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 1px 3px 10px rgb(0 0 0 / 54%);
+    border-radius: 10px;
+    
+  
+  }
+
+
+  .info-text{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+  
+    font-size: 12px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+    
+  }
+
+  .btn-cookies{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+  
+  }
+
+  
 }
 
 @media only screen and (max-width: 575px) {
@@ -1012,6 +1108,6 @@ nav.navbar button {
 
 
 
-/* Marcelo Garcia */
+
 
 

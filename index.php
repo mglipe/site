@@ -28,17 +28,18 @@
         
         <!-- Icones FontAwesome -->
         <script src="https://use.fontawesome.com/bcd9de9bc8.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         
         
         <!-- CSS -->
+        <link rel="stylesheet" href="/css/style.css" type="text/css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      
-        <!-- <link rel="stylesheet" href="/site/css/index.css" type="text/css"></link> -->
-        <link rel="stylesheet" href="https://belemdopiaui.pi.leg.br/site/css/style.css" type="text/css"></link>
+
+        <link rel="stylesheet" href="https://belemdopiaui.pi.leg.br/site/css/style.css" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+       
         
     </head>
     <body>
@@ -173,6 +174,14 @@
             </div>
             
         </div>
+
+        <div class="lgdp">
+            <div class="info-text ml-3">O site usa cookies e tecnologias semelhantes para melhorar a sua experiência de navegação, assim como providenciar alguns recursos essenciais. Ao continuar em nosso site, você concorda com a nossa Política de Cookies, Privacidade e Termos de Uso.</div>
+            <div class="btn-cookies">
+                <div class="term-cookies"><a href="/lgpd">Ver termos</a></div>
+                <div class="term-allow "><button class="btn btn-button bg-primary text-light accept">Concordar</button></div>
+            </div>   
+        </div>
         
         <div class='row-footer'>
             <div class='container' id="rodape">
@@ -246,7 +255,9 @@
 		  float: right;
 		  padding: 10px;
 		  cursor: pointer;
-}
+        }
+      
+
 	</style>
     <script>
 	$(document).ready(function() { 
@@ -460,6 +471,13 @@
         // $('meta[name=head]').attr("content","teste");
 		// localStorage.clear();
 		
+
+
+        //info cookies div-fixed
+        $(".accept").click(function(){
+            $(".lgdp").hide("slow");
+            //save the data in localstorage
+        })
     </script>
 
     
