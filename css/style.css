@@ -833,7 +833,7 @@ nav.navbar button {
   border: 2px solid black;
 }
 
-.box-search:hover input {
+.box-search:hover input  {
   width: 500px;
 }
 
@@ -939,6 +939,13 @@ nav.navbar button {
 .title-terms{
   color: #007bff;
 
+}
+
+
+/* map-site */
+
+.mapa-site{
+  padding: 0 20px;
 }
 
 

@@ -115,7 +115,7 @@
 
 
 
-                <div class="acessibilidade">
+                <div class="acessibilidade" style="width: 300px; align-items:end">
                     <div class="dark-mode">
                         <input type="checkbox" class="checkbox" id="chk">
                         <label class="label" for="chk" title="Contraste">
@@ -471,6 +471,18 @@
         // $('meta[name=head]').attr("content","teste");
 		// localStorage.clear();
 		
+
+        // button buscar
+        $("#txtBusca").on("focus",function(event){
+            $(this).css("width", "500px"); 
+        })
+
+        $(document).click(function(event){
+            if(!$("#txtBusca").is(event.target)){
+                $("#txtBusca").removeAttr("style");
+            }
+        })
+
 
 
         //info cookies div-fixed

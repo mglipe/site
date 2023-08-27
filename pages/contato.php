@@ -1,7 +1,9 @@
 <?php
-  include_once('controller/ReceiveDataController.php');
+  
 
   if($_GET["id"]){
+
+    include_once('controller/ReceiveDataController.php');
     $_rd = new ReceiveDataController;
     $data = $_rd -> selecionar($_GET["id"]);
    
@@ -14,7 +16,7 @@
 <section class="d-flex flex-row">
   <div class="col-10">
     <form action="../controller/ReceiveDataController.php" method="POST">
-      <input type="hidden" name="<?=$_GET["id"] != 0 ? "editar" : "salvar"?>" value="<?=$_GET["id"]?>">
+      <input type="hidden" name="<?=$_GET["id"] != null ? "editar" : "salvar"?>" value="<?=$_GET["id"]?>">
       <div class="form-group">
         <label for="exampleInputEmail1">Titulo</label>
         <input type="text" name="title" value="<?=@$data[0]["titulo"]?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter title">
@@ -30,6 +32,9 @@
         <label for="exampleInputPhone">Modulo</label>
         <input type="text" name="module" value="<?=@$data[0]["modulo"]?>" class="form-control" id="exampleInputPhone" placeholder="modulo">
       </div>
+
+      
+
       <div class="d-flex flex-row">
         <button type="submit" class="btn btn-primary">Submit</button>
         <a class="btn btn-info ml-3 btn-list" href="/lista">List</a>  

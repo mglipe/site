@@ -2,6 +2,7 @@
 		// include_once("controller/ReceiveDataController.php");
 		// $_rd = new ReceiveDataController;
 		// var_dump($_rd);
+		//falar - ean lucas pimenteiras
 	?>
 	<div class="home-noticias">
 		<div class="noticia-destaque">

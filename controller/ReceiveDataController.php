@@ -1,9 +1,6 @@
 <?Php
     #die("aqui");
     include_once('DataBaseController.php');
-
-    $_rd = new ReceiveDataController;
-
     
 
 class ReceiveDataController{
@@ -56,6 +53,13 @@ class ReceiveDataController{
         return $list;
     }
 
+    public function selecionarAll(){
+        $this->_db->sql = "SELECT * FROM site";
+        $list = $this->_db -> select();
+
+        return $list;
+    }
+
 
 
     public function buscar($termo){
@@ -70,8 +74,10 @@ class ReceiveDataController{
 
 }
 
+$_rd = new ReceiveDataController;
 //execute just through of the method POST and GET, directly in URL is not permission
 $post = array_keys($_POST);
+var_dump($_POST);
 $action = @$post[0];
     if($action == "salvar"){
         $_rd -> salvar();
